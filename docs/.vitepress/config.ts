@@ -33,7 +33,7 @@ export default defineConfig({
       {
         text: 'Components',
         collapsed: true,
-        items: []
+        items: [{ text: 'Toggle', link: '/components/toggle' }]
       },
       {
         text: 'Directives',
