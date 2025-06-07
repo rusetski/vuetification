@@ -4,11 +4,11 @@ layout: home
 
 hero:
   name: 'Vuetification'
-  text: 'Comming soon'
-  tagline: The project is currently under development.
+  text: 'Скоро'
+  tagline: Проект в разработке
   actions:
     - theme: brand
-      text: Getting Started
+      text: Начать
       link: /start/introduction
     - theme: alt
       text: GitHub

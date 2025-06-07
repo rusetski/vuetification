@@ -1,28 +1,63 @@
-import { defineConfig } from 'vitepress'
+import { defineConfig } from 'vitepress';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "Vuetification",
-  description: "Vuetification",
+  title: 'Vuetification',
+  description: 'Vuetification',
+  base: '/vuetification/',
   themeConfig: {
+    logo: '/images/logo.svg',
+    search: {
+      provider: 'local'
+    },
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
-    ],
-
-    sidebar: [
       {
-        text: 'Examples',
+        text: 'Docs',
         items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
+          { text: 'Getting Started', link: '/start/introduction' },
+          { text: 'Components', link: '/composables/use-interval' },
+          { text: 'Directives', link: '/composables/use-interval' },
+          { text: 'Composables', link: '/composables/use-interval' }
         ]
       }
     ],
 
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
-    ]
-  }
-})
+    sidebar: [
+      {
+        text: 'Getting Started',
+        collapsed: true,
+        items: [{ text: 'Introduction', link: '/start/introduction' }]
+      },
+      {
+        text: 'Components',
+        collapsed: true,
+        items: []
+      },
+      {
+        text: 'Directives',
+        collapsed: true,
+        items: []
+      },
+      {
+        text: 'Composables',
+        collapsed: true,
+        items: []
+      }
+    ],
+
+    socialLinks: [{ icon: 'github', link: 'https://github.com/rusetski/vuetification' }]
+  },
+  locales: {
+    root: {
+      label: 'English',
+      lang: 'en'
+    },
+    ru: {
+      label: 'Русский',
+      lang: 'ru'
+    }
+  },
+  outDir: '../../rusetski.github.io/vuetification'
+});
