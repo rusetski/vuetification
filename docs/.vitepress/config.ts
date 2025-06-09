@@ -17,18 +17,19 @@ export default defineConfig({
         text: 'Docs',
         items: [
           { text: 'Getting Started', link: '/start/introduction' },
-          { text: 'Components', link: '/composables/use-interval' },
+          { text: 'Components', link: '/components/toggle' },
           { text: 'Directives', link: '/composables/use-interval' },
-          { text: 'Composables', link: '/composables/use-interval' }
+          { text: 'Composables', link: '/composables/interval' }
         ]
       }
+      // { text: 'Examples', link: '/markdown-examples' }
     ],
 
     sidebar: [
       {
         text: 'Getting Started',
         collapsed: true,
-        items: [{ text: 'Introduction', link: '/start/introduction' }]
+        items: [{ text: 'Quick Start', link: '/start/quick-start' }]
       },
       {
         text: 'Components',
