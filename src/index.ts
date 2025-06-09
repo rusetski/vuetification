@@ -1,6 +1,7 @@
 import type { App, Component } from 'vue';
 // Components
-export * as components from './components';
+import * as components from './components';
+export * from './components';
 
 // Composables
 export { useInterval } from './composables/useInterval';
@@ -9,9 +10,7 @@ export { useKeyboard } from './composables/useKeyboard';
 interface Options {
   componentsPrefix?: string;
   components: {
-    [componentName: string]: {
-      default: Component;
-    };
+    [componentName: string]: Component;
   };
 }
 
@@ -34,7 +33,7 @@ export default {
 
       app.component(
         componentName,
-        mergedOptions.components[key as keyof typeof mergedOptions.components].default
+        mergedOptions.components[key as keyof typeof mergedOptions.components]
       );
     });
   }
