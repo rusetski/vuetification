@@ -1,6 +1,6 @@
 import type { App, Component } from 'vue';
 // Components
-import * as components from './components';
+export * as components from './components';
 
 // Composables
 export { useInterval } from './composables/useInterval';
