@@ -48,9 +48,11 @@ const model = defineModel();
 
 <style lang="scss" scoped>
 .v-toggle {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   flex-direction: row;
+  flex-shrink: 0;
+  cursor: pointer;
 
   &.label-top,
   &.label-bottom {
@@ -92,7 +94,6 @@ const model = defineModel();
     background-color: rgba(66, 66, 66, 0.5);
     box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3);
     transition: background-color 0.3s;
-    cursor: pointer;
   }
 
   &__dot {
