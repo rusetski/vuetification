@@ -44,7 +44,7 @@ export default defineConfig({
       {
         text: 'Composables',
         collapsed: true,
-        items: []
+        items: [{ text: 'Interval', link: '/composables/interval' }]
       }
     ],
 
