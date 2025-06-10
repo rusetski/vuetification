@@ -44,7 +44,10 @@ export default defineConfig({
       {
         text: 'Composables',
         collapsed: true,
-        items: [{ text: 'Interval', link: '/composables/interval' }]
+        items: [
+          { text: 'Interval', link: '/composables/interval' },
+          { text: 'Keyboard', link: '/composables/keyboard' }
+        ]
       }
     ],
 
