@@ -6,12 +6,14 @@ export * from './components';
 // Composables
 export { useInterval } from './composables/useInterval';
 export { useKeyboard } from './composables/useKeyboard';
+import { installTheme, type ThemeOptions } from './composables/useTheme';
 
 interface Options {
   componentsPrefix?: string;
-  components: {
+  components?: {
     [componentName: string]: Component;
   };
+  theme?: ThemeOptions;
 }
 
 export default {
@@ -20,6 +22,8 @@ export default {
       componentsPrefix: 'v',
       components
     };
+
+    installTheme(options?.theme);
 
     const mergedOptions = Object.assign({}, defaultOptions, options);
 

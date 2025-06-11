@@ -10,7 +10,6 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import VToggle from './components/VToggle/VToggle.vue';
 
 const checked = ref(false);
 </script>

@@ -3,7 +3,10 @@
     class="v-toggle"
     :class="[{ checked: model, disabled }, `label-${labelPosition}`]"
   >
-    <div class="v-toggle__track">
+    <div
+      class="v-toggle__track"
+      :style="{ 'background-color': color && model ? color : '' }"
+    >
       <div class="v-toggle__dot">
         <input
           class="v-toggle__input"
@@ -34,8 +37,7 @@ defineProps({
     default: ''
   },
   color: {
-    type: String,
-    default: '#d32f2f'
+    type: String
   },
   disabled: {
     type: Boolean,
@@ -73,7 +75,7 @@ const model = defineModel();
 
   &.checked {
     .v-toggle__track {
-      background-color: v-bind(color);
+      background-color: var(--theme-color-primary);
     }
 
     .v-toggle__dot {
