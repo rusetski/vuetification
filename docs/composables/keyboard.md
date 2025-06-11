@@ -5,10 +5,10 @@ Helps get currently pressed keys and add keyboard shortcuts
 ## Usage
 
 ```js
-// Импортируйте из библиотеки
+// Import from the library
 import { useKeyboard } from 'vuetification';
 
-// Создайте новый экземпляр
+// Create a new interval instance
 const keyboard = useKeyboard();
 ```
 
