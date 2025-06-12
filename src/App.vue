@@ -18,9 +18,11 @@ const checked = ref(false);
 body {
   margin: 0;
   background-color: #eef3f7;
+  font-family: Roboto;
 }
 
 .title {
+  margin-top: 50px;
   padding: 10px;
   text-align: center;
   font-size: 22px;
