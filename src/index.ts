@@ -1,4 +1,5 @@
 import type { App, Component } from 'vue';
+
 // Components
 import * as components from './components';
 export * from './components';
