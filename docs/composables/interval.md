@@ -3,7 +3,7 @@
 ## Usage
 
 ```js
-// Import from library
+// Import from the library
 import { useInterval } from 'vuetification';
 
 // Create a new interval instance
