@@ -66,6 +66,7 @@ watch(model.value, () => {
 
 <style lang="scss" scoped>
 .v-notify {
+  z-index: 99999;
   position: fixed;
   padding: 15px;
   display: flex;
@@ -100,9 +101,11 @@ watch(model.value, () => {
   &__point {
     margin-top: 10px;
     padding: 15px;
-    width: 300px;
+    width: 330px;
     color: #fff;
     font-size: 14px;
+    line-height: 1;
+    box-sizing: border-box;
     border-radius: 5px;
     background-color: rgba(0, 0, 0, 0.7);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
