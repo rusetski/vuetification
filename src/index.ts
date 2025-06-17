@@ -4,6 +4,10 @@ import type { App, Component } from 'vue';
 import * as components from './components';
 export * from './components';
 
+// Directives
+import * as directives from './directives';
+export * from './directives';
+
 // Composables
 export { useInterval } from './composables/useInterval';
 export { useKeyboard } from './composables/useKeyboard';
@@ -21,7 +25,8 @@ export default {
   install(app: App, options?: Options) {
     const defaultOptions = {
       componentsPrefix: 'v',
-      components
+      components,
+      directives
     };
 
     installTheme(options?.theme);
@@ -40,6 +45,10 @@ export default {
         componentName,
         mergedOptions.components[key as keyof typeof mergedOptions.components]
       );
+    });
+
+    Object.keys(mergedOptions.directives).forEach((key) => {
+      app.directive(key, mergedOptions.directives[key as keyof typeof mergedOptions.directives]);
     });
   }
 };
