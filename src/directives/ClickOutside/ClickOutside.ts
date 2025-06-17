@@ -22,7 +22,7 @@ export const ClickOutside = {
       const include = typeof binding.value === 'object' ? wrap(binding.value.include || []) : [];
       return include.reduce(
         (acc, selector) => {
-          const htmlElement = document.querySelector(selector);
+          const htmlElement: HTMLElement | null = document.querySelector(selector);
           htmlElement && acc.push(htmlElement);
           return acc;
         },

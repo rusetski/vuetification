@@ -1,4 +1,4 @@
-import type { App, Component } from 'vue';
+import type { App, Component, Directive } from 'vue';
 
 // Components
 import * as components from './components';
@@ -17,6 +17,9 @@ interface Options {
   componentsPrefix?: string;
   components?: {
     [componentName: string]: Component;
+  };
+  directives?: {
+    [directiveName: string]: Directive;
   };
   theme?: ThemeOptions;
 }
