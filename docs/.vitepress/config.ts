@@ -16,9 +16,9 @@ export default defineConfig({
       {
         text: 'Docs',
         items: [
-          { text: 'Getting Started', link: '/start/introduction' },
+          { text: 'Getting Started', link: '/start/quick-start' },
           { text: 'Components', link: '/components/toggle' },
-          { text: 'Directives', link: '/composables/use-interval' },
+          { text: 'Directives', link: '/directives/click-outside' },
           { text: 'Composables', link: '/composables/interval' }
         ]
       }
@@ -29,7 +29,10 @@ export default defineConfig({
       {
         text: 'Getting Started',
         collapsed: true,
-        items: [{ text: 'Quick Start', link: '/start/quick-start' }]
+        items: [
+          // { text: 'Introduction', link: '/start/introduction' },
+          { text: 'Quick Start', link: '/start/quick-start' }
+        ]
       },
       {
         text: 'Components',
@@ -42,7 +45,7 @@ export default defineConfig({
       {
         text: 'Directives',
         collapsed: true,
-        items: []
+        items: [{ text: 'Click outside', link: '/directives/click-outside' }]
       },
       {
         text: 'Composables',
@@ -52,6 +55,13 @@ export default defineConfig({
           { text: 'Keyboard', link: '/composables/keyboard' }
         ]
       }
+      // {
+      //   text: 'Examples',
+      //   items: [
+      //     { text: 'Markdown Examples', link: '/markdown-examples' },
+      //     { text: 'Runtime API Examples', link: '/api-examples' }
+      //   ]
+      // }
     ],
 
     socialLinks: [{ icon: 'github', link: 'https://github.com/rusetski/vuetification' }]

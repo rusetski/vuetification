@@ -2,10 +2,6 @@
 
 ## Использование
 
-<script setup>
-import VToggle from '../../../src/components/VToggle/VToggle.vue';
-</script>
-
 <VToggle label="Toggle" color="#d32f2f" />
 
 ```vue
