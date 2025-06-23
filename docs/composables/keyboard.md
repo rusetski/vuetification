@@ -29,7 +29,7 @@ To add a keyboard shortcut, use the shortcut function, passing the keyboard shor
 ```js
 const { shortcut } = useKeyboard();
 
-shortcut('control+shift+q', () => alert('Вы использовали сочетание клавиш'));
+shortcut('control+shift+q', () => alert('You used a keyboard shortcut'));
 ```
 
 <script setup>
@@ -37,5 +37,5 @@ import { useKeyboard } from '../../src/composables/useKeyboard';
 
 const { pressed, isPressed, shortcut } = useKeyboard();
 
-shortcut('control+shift+q', () => alert('Вы использовали сочетание клавиш'))
+shortcut('control+shift+q', () => alert('You used a keyboard shortcut'))
 </script>
