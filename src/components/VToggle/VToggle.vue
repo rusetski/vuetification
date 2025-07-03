@@ -1,7 +1,7 @@
 <template>
   <label
     class="v-toggle"
-    :class="[{ checked: model, disabled }, `label-${labelPosition}`]"
+    :class="[{ checked: model, disabled }, `label-${position}`]"
   >
     <div
       class="v-toggle__track"
@@ -30,29 +30,27 @@
 </template>
 
 <script setup lang="ts">
-defineProps({
-  label: String,
-  labelPosition: {
-    type: String,
-    default: ''
-  },
-  color: {
-    type: String
-  },
-  disabled: {
-    type: Boolean,
-    default: false
-  }
-});
+import { computed } from 'vue';
 
-const model = defineModel();
+interface Props {
+  label?: string;
+  labelPosition?: string;
+  color?: string;
+  disabled?: boolean;
+}
+
+const { labelPosition = 'right' } = defineProps<Props>();
+
+const isValidPosition = (position: string): boolean => ['top', 'bottom', 'left', 'right'].includes(position);
+const position = computed(() => isValidPosition(labelPosition) ? labelPosition : 'right');
+
+const model = defineModel<boolean>();
 </script>
 
 <style lang="scss" scoped>
 .v-toggle {
   display: inline-flex;
   align-items: center;
-  flex-direction: row;
   flex-shrink: 0;
   cursor: pointer;
 
@@ -71,6 +69,10 @@ const model = defineModel();
 
   &.label-left {
     flex-direction: row-reverse;
+  }
+
+  &.label-right {
+    flex-direction: row;
   }
 
   &.checked {
