@@ -1,5 +1,4 @@
-import VToggle from '../../../src/components/VToggle/VToggle.vue';
-import { ClickOutside } from '../../../src/directives/ClickOutside/ClickOutside';
+import vuetification from '../../../src/index';
 
 // https://vitepress.dev/guide/custom-theme
 import { h } from 'vue';
@@ -15,7 +14,6 @@ export default {
     });
   },
   enhanceApp({ app, router, siteData }) {
-    app.component('VToggle', VToggle);
-    app.directive('ClickOutside', ClickOutside);
+    app.use(vuetification);
   }
 } satisfies Theme;
