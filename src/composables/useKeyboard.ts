@@ -7,7 +7,7 @@ interface Shortcut {
 
 export function useKeyboard() {
   const pressed = reactive<string[]>([]);
-  const isPressed = (key: string) => pressed.includes(key);
+  const isPressed = (key: string) => pressed.includes(key.toLowerCase());
   const shortcuts: Shortcut[] = [];
 
   const onKeyDown = (event: KeyboardEvent) => {
