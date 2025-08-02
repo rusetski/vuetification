@@ -111,6 +111,8 @@ watch(model.value, () => {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
     user-select: none;
     pointer-events: all;
+    overflow: hidden;
+    word-break: break-all;
   }
 }
 
