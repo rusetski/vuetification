@@ -7,6 +7,11 @@
     />
   </div>
 
+  <div class="title">VBtn</div>
+  <div class="row">
+    <VBtn>Button</VBtn>
+  </div>
+
   <div class="title">VNotify</div>
   <div class="row">
     <div>
