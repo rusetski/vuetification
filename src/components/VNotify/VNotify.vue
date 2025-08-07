@@ -26,18 +26,17 @@
 
 <script setup lang="ts">
 import { ref, watch } from 'vue';
-const props = defineProps({
-  position: String,
-  timeout: Number,
-  html: {
-    type: Boolean,
-    default: true
-  }
-});
-const model = defineModel<string[]>({
-  default: () => []
-});
-const timeout = props.timeout || 3000;
+
+interface Props {
+  position?: string;
+  timeout?: number;
+  html?: boolean;
+}
+
+const { position = 'bottom left', timeout = 3000, html = true } = defineProps<Props>();
+
+const model = defineModel<string[]>({ default: () => [] });
+
 let timer: ReturnType<typeof setTimeout> | undefined;
 const notifications = ref<{ message: string; key: string }[]>([]);
 
