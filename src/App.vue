@@ -12,6 +12,15 @@
     <VBtn>Button</VBtn>
   </div>
 
+  <div class="title">VTabs</div>
+  <div class="row">
+    <VTabs v-model="activeTab">
+      <VTab title="Tab 1"> Content of tab 1 </VTab>
+      <VTab title="Tab 2"> Content of tab 2 </VTab>
+      <VTab title="Tab 3"> Content of tab 3 </VTab>
+    </VTabs>
+  </div>
+
   <div class="title">VNotify</div>
   <div class="row">
     <div>
@@ -51,6 +60,7 @@
 import { ref } from 'vue';
 
 const checked = ref(false);
+const activeTab = ref(0);
 const notifications = ref<string[]>([]);
 const active = ref<boolean>(false);
 </script>
