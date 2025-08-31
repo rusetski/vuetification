@@ -39,7 +39,8 @@ export default defineConfig({
         collapsed: true,
         items: [
           { text: 'Toggle', link: '/components/toggle' },
-          { text: 'Notify', link: '/components/notify' }
+          { text: 'Notify', link: '/components/notify' },
+          { text: 'Btn', link: '/components/btn' }
         ]
       },
       {
