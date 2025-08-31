@@ -10,10 +10,10 @@
 </template>
 
 <script setup lang="ts">
-defineProps({
-  disabled: Boolean,
-  rounded: Boolean
-});
+defineProps<{
+  disabled?: boolean;
+  rounded?: boolean;
+}>();
 </script>
 
 <style lang="scss" scoped>
