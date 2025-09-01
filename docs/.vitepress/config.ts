@@ -40,7 +40,8 @@ export default defineConfig({
         items: [
           { text: 'Toggle', link: '/components/toggle' },
           { text: 'Notify', link: '/components/notify' },
-          { text: 'Btn', link: '/components/btn' }
+          { text: 'Btn', link: '/components/btn' },
+          { text: 'Tabs', link: '/components/tabs' }
         ]
       },
       {
