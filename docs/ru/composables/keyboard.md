@@ -30,7 +30,7 @@ const { pressed, isPressed } = useKeyboard();
 ```js
 const { shortcut } = useKeyboard();
 
-shortcut('control+shift+q', () => alert('Вы использовали сочетание клавиш'));
+shortcut('ctrl+shift+q', () => alert('Вы использовали сочетание клавиш'));
 ```
 
 <script setup>
@@ -38,5 +38,5 @@ import { useKeyboard } from '../../../src/composables/useKeyboard';
 
 const { pressed, isPressed, shortcut } = useKeyboard();
 
-shortcut('control+shift+q', () => alert('Вы использовали сочетание клавиш'))
+shortcut('ctrl+shift+q', () => alert('Вы использовали сочетание клавиш'))
 </script>
