@@ -56,6 +56,11 @@ export default defineConfig({
           { text: 'Interval', link: '/composables/interval' },
           { text: 'Keyboard', link: '/composables/keyboard' }
         ]
+      },
+      {
+        text: 'Utilites',
+        collapsed: true,
+        items: [{ text: 'Chunk', link: '/utilites/chunk' }]
       }
       // {
       //   text: 'Examples',
