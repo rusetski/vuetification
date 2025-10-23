@@ -11,6 +11,7 @@ export * from './directives';
 // Composables
 export { useInterval } from './composables/useInterval';
 export { useKeyboard } from './composables/useKeyboard';
+export { chunk } from './utilites/chunk';
 import { installTheme, type ThemeOptions } from './composables/useTheme';
 
 interface Options {
