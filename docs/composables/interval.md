@@ -7,7 +7,7 @@
 import { useInterval } from 'vuetification';
 
 // Create a new interval instance
-const interval = useInterval();
+const interval = useInterval(options);
 
 // Now you can start an interval by calling start
 // and passing it a callback and an interval in milliseconds.
@@ -18,3 +18,9 @@ interval.stop();
 ```
 
 The interval is automatically stopped when the component's onBeforeUnmount hook is triggered and when a new timer is started from the same instance.
+
+## Options
+
+| Option            | Default | Description                                   |
+| ----------------- | ------- | --------------------------------------------- |
+| **stopOnUnmount** | true    | Stop the interval in the onBeforeUnmount hook |
