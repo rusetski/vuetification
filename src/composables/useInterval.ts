@@ -1,21 +1,31 @@
 import { onBeforeUnmount } from 'vue';
 
-export const useInterval = () => {
-    let interval: ReturnType<typeof setInterval>;
+interface Options {
+  stopOnUnmount?: boolean;
+}
 
-    const stop = () => {
-        clearInterval(interval);
-    };
+const defaultOptions = {
+  stopOnUnmount: true
+};
 
-    onBeforeUnmount(() => {
-        stop();
-    });
+export const useInterval = ({ stopOnUnmount }: Options = defaultOptions) => {
+  let interval: ReturnType<typeof setInterval>;
 
-    return {
-        start(callback: () => void, time: number) {
-            if (interval) stop();
-            interval = setInterval(callback, time);
-        },
-        stop
-    };
+  const stop = () => {
+    clearInterval(interval);
+  };
+
+  onBeforeUnmount(() => {
+    if (stopOnUnmount) {
+      stop();
+    }
+  });
+
+  return {
+    start(callback: () => void, time: number) {
+      if (interval) stop();
+      interval = setInterval(callback, time);
+    },
+    stop
+  };
 };
