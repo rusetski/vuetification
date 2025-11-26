@@ -19,7 +19,8 @@ export default defineConfig({
           { text: 'Getting Started', link: '/start/quick-start' },
           { text: 'Components', link: '/components/toggle' },
           { text: 'Directives', link: '/directives/click-outside' },
-          { text: 'Composables', link: '/composables/interval' }
+          { text: 'Composables', link: '/composables/interval' },
+          { text: 'Utilites', link: '/utilites/chunk' }
         ]
       }
       // { text: 'Examples', link: '/markdown-examples' }
