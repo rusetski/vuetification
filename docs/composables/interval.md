@@ -6,21 +6,55 @@
 // Import from the library
 import { useInterval } from 'vuetification';
 
-// Create a new interval instance
-const interval = useInterval(options);
+// Create a new interval instance and pass callback and delay as arguments
+const interval = useInterval(callback, delay);
 
-// Now you can start an interval by calling start
-// and passing it a callback and an interval in milliseconds.
-interval.start(callback, diration);
+// Now you can start an interval by calling start method
+interval.start();
 
-// And stop it by using stop
+// And stop it by using stop method
 interval.stop();
 ```
 
-The interval is automatically stopped when the component's onBeforeUnmount hook is triggered and when a new timer is started from the same instance.
+The interval is automatically stopped when the component's onBeforeUnmount hook is triggered and when a new interval is started from the same instance.
 
 ## Options
 
-| Option            | Default | Description                                   |
-| ----------------- | ------- | --------------------------------------------- |
-| **stopOnUnmount** | true    | Stop the interval in the onBeforeUnmount hook |
+You can also pass object with some options as the first argument of the useInterval function instead of callback function
+
+```js
+const interval = useInterval({
+  callback,
+  delay: 3000,
+  repeat: 5
+});
+```
+
+| Option            | Type     | Default   | Description                                                          |
+| ----------------- | -------- | --------- | -------------------------------------------------------------------- |
+| **callback**      | Function |           | Callback function (receives current iteration as the first argument) |
+| **delay**         | Number   | 1000      | Interval diration                                                    |
+| **stopOnUnmount** | Boolean  | true      | Stop the interval in the onBeforeUnmount hook                        |
+| **repeat**        | Number   | undefined | Stop interval after specified number of calls                        |
+| **immediately**   | Boolean  | true      | Start the callback immediately without waiting for a delay           |
+
+## Current iteration
+
+If you need the current iteration number you can get it as ref from the current instance or as the first argument of callback function
+
+```js
+const callback = (iteration) => {
+  console.log(iteration);
+};
+
+const { iteration } = useInterval(callback);
+```
+
+<script setup>
+import { useInterval } from '../../src/composables/useInterval';
+
+const { start, iteration } = useInterval();
+start();
+</script>
+
+Iteration counter: {{ iteration }} times
