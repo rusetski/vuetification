@@ -31,6 +31,16 @@ export const useInterval = (optionsOrCallback: OptionsOrCallback, intervalDelay?
   let interval: ReturnType<typeof setInterval>;
   const iteration = ref(0);
 
+  const start = (newDelay?: number) => {
+    if (interval) stop();
+
+    iteration.value = 0;
+
+    if (immediately) hundler();
+
+    interval = setInterval(hundler, newDelay || delay || defaultOptions.delay);
+  };
+
   const stop = () => {
     clearInterval(interval);
   };
@@ -43,22 +53,15 @@ export const useInterval = (optionsOrCallback: OptionsOrCallback, intervalDelay?
     if (typeof repeat === 'number' && repeat <= iteration.value) stop();
   };
 
-  onBeforeUnmount(() => {
-    if (stopOnUnmount) {
+  if (stopOnUnmount) {
+    onBeforeUnmount(() => {
       stop();
-    }
-  });
+    });
+  }
 
   return {
     iteration,
-    start() {
-      if (interval) stop();
-
-      iteration.value = 0;
-
-      if (immediately) hundler();
-      interval = setInterval(hundler, delay || defaultOptions.delay);
-    },
+    start,
     stop
   };
 };
