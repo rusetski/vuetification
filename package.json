@@ -61,5 +61,9 @@
     "type": "git",
     "url": "https://github.com/rusetski/vuetification.git"
   },
-  "homepage": "https://rusetski.github.io/vuetification"
+  "homepage": "https://rusetski.github.io/vuetification",
+  "license": "MIT",
+  "keywords": [
+    "vuetification"
+  ]
 }
