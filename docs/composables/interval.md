@@ -57,4 +57,22 @@ const { start, iteration } = useInterval();
 start();
 </script>
 
-Iteration counter: {{ iteration }} times
+Iteration counter: {{ iteration }} times.
+
+## Change delay
+
+If you need to change delay you can pass new delay as argument to start function.
+
+```js
+interval.start(100);
+```
+
+::: warning
+Since you are starting a new interval, this will start it without waiting for the previous interval to end, and will also reset the iteration counter.
+:::
+
+To start the interval with a new delay each time delay changes, you can do something like this:
+
+```js
+watch(delay, interval.start);
+```
