@@ -31,16 +31,21 @@ const { pressed, isPressed } = useKeyboard();
 ```js
 const { shortcut } = useKeyboard();
 
-shortcut('ctrl+shift+q', () => alert('Вы использовали сочетание клавиш'));
+shortcut('ctrl+shift+q', showNotitication('Вы использовали сочетание клавиш'));
 ```
 
 <script setup>
+import { ref } from 'vue';
 import { useKeyboard } from '../../../src/composables/useKeyboard';
+import VNotify from '../../../src/components/VNotify/VNotify.vue';
 
 const { pressed, isPressed, shortcut } = useKeyboard();
+const notifications = ref([]);
 
-shortcut('ctrl+shift+q', () => alert('Вы использовали сочетание клавиш'))
+shortcut('ctrl+shift+q', () => notifications.value.push('Вы использовали сочетание клавиш'))
 </script>
+
+<VNotify v-model="notifications" />
 
 ## Опции
 

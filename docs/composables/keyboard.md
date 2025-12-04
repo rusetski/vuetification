@@ -30,16 +30,21 @@ You can also add a single key as the first argument to assign a handler to it.
 ```js
 const { shortcut } = useKeyboard();
 
-shortcut('ctrl+shift+q', () => alert('You used a keyboard shortcut'));
+shortcut('ctrl+shift+q', showNotitication('You used a keyboard shortcut'));
 ```
 
 <script setup>
+import { ref } from 'vue';
 import { useKeyboard } from '../../src/composables/useKeyboard';
+import VNotify from '../../src/components/VNotify/VNotify.vue';
 
 const { pressed, isPressed, shortcut } = useKeyboard();
+const notifications = ref([]);
 
-shortcut('ctrl+shift+q', () => alert('You used a keyboard shortcut'))
+shortcut('ctrl+shift+q', () => notifications.value.push('You used a keyboard shortcut'))
 </script>
+
+<VNotify v-model="notifications" />
 
 ## Options
 
